@@ -1,0 +1,127 @@
+@mixin font-size($sizeValue) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: ($sizeValue / 10) + rem;
+}
+@mixin font-size-important($sizeValue) {
+  font-size: ($sizeValue * 10) + px !important;
+  font-size: ($sizeValue / 10) + rem !important;
+}
+
+// Visually hide an element - http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+// push auto - http://engageinteractive.co.uk/blog/top-10-scss-mixins
+@mixin push--auto {
+    margin: { 
+        left: auto;
+        right: auto;
+    }
+}
+
+// Pseudo - http://engageinteractive.co.uk/blog/top-10-scss-mixins
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+// Responsive ratio - http://engageinteractive.co.uk/blog/top-10-scss-mixins
+
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+            width: 100%;
+            padding-top: $padding;
+        }
+    } @else {
+        padding-top: $padding;
+    }
+}
+
+// Maintain aspect ratio with fixed height
+
+@mixin aspect-ratio-height($height, $ratio) {
+  height: $height;
+  width: $height / $ratio;
+}
+
+
+@mixin social-icon-large($width) {
+	height: $social-icon-beta;
+	width: ($width  / 10) + rem;
+}
+@mixin social-icon-small($width) {
+	height: $social-icon-alpha;
+	width: ($width / 10) + rem;
+}
+@mixin margin-increase {
+	@media screen and (min-width: $break-beta) {
+		padding: $margin-beta;
+	}
+}
+@mixin transition($property, $duration, $timing) {
+  transition: $property $duration $timing;
+}
+@mixin transition-color {
+  transition: color 700ms ease;
+}
+@mixin transition-text-shadow {
+  transition: text-shadow 200ms ease;
+}
+@mixin border-small($color) {
+  border: 1px solid $color;
+}
+
+// Media Queries – http://codepen.io/imathis/pen/BDzcI
+
+$mq-breakpoints: (
+    "alpha":    $break-alpha,
+    "beta":     $break-beta,
+    "gamma":    $break-gamma,
+    "delta":    $break-delta,
+    "epsilon":  $break-epsilon,
+);
+@mixin mq($width, $type: min) {
+    @if map_has_key($mq-breakpoints, $width) {
+        $width: map_get($mq-breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+// Screen dimensions 
+@mixin screen() {
+  width: 100vw;
+  height: 100vh;
+  @include media('>=tablet') {
+      width: calc(100vw - 80px);
+      height: calc(100vh - 80px);
+      margin: 40px;
+    }
+}
+
+// Screen dimensions 
+@mixin screenT($margin: 40px, $marginOn: true) {
+  width: 100vw;
+  height: 100vh;
+  @include media('>=tablet') {
+      width: calc(100vw - #{$margin} * 2);
+      height: calc(100vh - #{$margin} * 2);
+      @if $marginOn {       margin: $margin;      }
+    }
+}

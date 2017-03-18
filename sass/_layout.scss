@@ -1,0 +1,131 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+#header {
+    position: fixed;
+    width: 9.375rem;
+    margin-left: -4.6875rem;
+    top: $margin-alpha;
+    left: 50%;
+    z-index: 999;
+}
+
+#notice {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#faire-logo-wrapper {
+    fill: $color-alpha;
+    width: inherit;
+}
+
+.hero {
+    display: flex;
+    min-height: 25rem;
+    height: 85vh;
+    background-color: $color-beta;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 $margin-alpha;
+    h1 {
+        margin-bottom: $margin-alpha;
+    }
+    .social {
+        transform: translateY($social-icon-beta/2);
+        li {
+            display: inline-block;
+            &:nth-child(n+2) {
+                margin-left: $margin-beta;
+            }
+        }
+        a {
+            height: $social-icon-beta;
+            display: block;
+        }
+        img {
+            height: $social-icon-beta;
+        }
+    }
+    @include mq( 'beta') {
+        height: 60vh;
+        justify-content: center;
+        padding: 0 $margin-beta;
+        .social {
+            transform: initial;
+            position: absolute;
+            top: calc(60vh - #{$social-icon-beta} / 2);
+        }
+    }
+}
+
+.about {
+    flex-direction: column;
+    display: flex;
+    h2 {
+        padding: $margin-delta+$social-icon-beta/2 $margin-alpha $margin-delta $margin-alpha;
+    }
+    p {
+        padding: $margin-delta $margin-alpha;
+        background-color: transparentize($color-gamma, 0.5);
+    }
+    @include mq( 'beta') {
+        h2 {
+            align-self: flex-end;
+            @include padding(null $margin-beta null 20%);
+        }
+        p {
+            align-self: flex-start;
+            @include padding(null 25% null $margin-beta);
+        }
+    }
+    @include mq( 'gamma') {
+        flex-direction: row;
+        align-items: center;
+        @include padding($margin-epsilon $margin-beta);
+        & * {}
+        h2 {
+            align-self: initial;
+            @include padding(0 $margin-alpha 0 0);
+            flex: 2 1 60%;
+
+        }
+        p {
+            align-self: initial;
+            @include padding(0 0 0 $margin-alpha);
+            flex: 1 1 40%;
+            background-color: inherit;
+        }
+    }
+}
+
+.contact {
+    flex-direction: column;
+    display: flex;
+    align-items: flex-end;
+    padding: $margin-delta $margin-alpha;
+    & > * {
+        max-width: 75%;
+    }
+    #mc_embed_signup {
+        width: 100%;
+    }
+    @include mq( 'beta') {
+        @include padding(null $margin-beta);
+    }
+}

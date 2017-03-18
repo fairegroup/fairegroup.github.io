@@ -1,0 +1,90 @@
+// colors
+$color-alpha: #363636;
+$color-beta: #E0E0D2;
+$color-gamma: rgba(166, 201, 212, 1.00);
+$color-delta: #B3B3B3;
+$color-epsilon: #ffffff;
+
+// Spacing for Margin, Padding, etc
+$margin-alpha: 1rem;
+$margin-beta: 2rem;
+$margin-gamma: 4rem;
+$margin-delta: 8rem;
+$margin-epsilon: 16rem;
+
+// Break Points
+$break-alpha: 500px;
+$break-beta: 700px;
+$break-gamma: 1000px;
+$break-delta: 1200px;
+$break-epsilon: 1900px;
+
+$social-icon-alpha: 1.6rem;
+$social-icon-beta: 3rem;
+
+$border-alpha: 0.1rem solid $color-alpha;
+$border-beta: 0.175rem solid $color-alpha;
+$border-gamma: 0.4rem solid $color-alpha;
+
+// duration
+$duration-alpha: 100ms;
+$duration-beta: 200ms;
+$duration-gamma: 300ms;
+$duration-delta: 400ms;
+
+// transition timing functions
+$timing-alpha: ease-in;
+$timing-beta: ease-out;
+$timing-gamma: linear;
+
+
+
+$font-stack-system: 'Roboto', sans-serif;
+$modular-scale-ratio: $augmented-fourth;
+$modular-scale-base: 1rem;
+
+
+// Bitters
+
+// Breakpoints
+$medium-screen: 600px;
+$large-screen: 900px;
+
+// Typography
+$base-font-family: $font-stack-system;
+$heading-font-family: $base-font-family;
+
+// Font Sizes
+$base-font-size: 1rem;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.1;
+
+// Other Sizes
+$base-border-radius: 0;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$blue: #1565c0;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$action-color: $blue;
+
+// Border
+$base-border-color: $color-alpha;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;
