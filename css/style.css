@@ -140,6 +140,10 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%; }
+  @media only screen and (min-width: 700px) {
+    #notice {
+      position: absolute;
+      top: 50vh; } }
 
 #faire-logo-wrapper {
   fill: #363636;
@@ -179,7 +183,7 @@ body {
       height: 3rem; }
   @media only screen and (min-width: 700px) {
     .hero {
-      height: 60vh;
+      height: 70vh;
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
@@ -188,7 +192,7 @@ body {
         -webkit-transform: initial;
                 transform: initial;
         position: absolute;
-        top: calc(60vh - 3rem / 2); } }
+        top: calc(70vh - 3rem / 2); } }
 
 .about {
   -webkit-box-orient: vertical;
@@ -223,23 +227,21 @@ body {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
-      padding: 16rem 2rem; }
+      padding: 12rem 2rem; }
+      .about * {
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 50%;
+                flex: 1 1 50%; }
       .about h2 {
         -ms-flex-item-align: initial;
             -ms-grid-row-align: initial;
             align-self: initial;
-        padding: 0 1rem 0 0;
-        -webkit-box-flex: 2;
-            -ms-flex: 2 1 60%;
-                flex: 2 1 60%; }
+        padding: 0 1rem 0 0; }
       .about p {
         -ms-flex-item-align: initial;
             -ms-grid-row-align: initial;
             align-self: initial;
         padding: 0 0 0 1rem;
-        -webkit-box-flex: 1;
-            -ms-flex: 1 1 40%;
-                flex: 1 1 40%;
         background-color: inherit; } }
 
 .contact {
@@ -250,18 +252,38 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 8rem 1rem; }
-  .contact > * {
-    max-width: 75%; }
   .contact #mc_embed_signup {
     width: 100%; }
   @media only screen and (min-width: 700px) {
     .contact {
-      padding-right: 2rem;
-      padding-left: 2rem; } }
+      padding: 8rem 2rem; } }
+  @media only screen and (min-width: 1000px) {
+    .contact {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: reverse;
+          -ms-flex-direction: row-reverse;
+              flex-direction: row-reverse;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      padding: 0 8rem 4rem; }
+      .contact > * {
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 50%;
+                flex: 1 1 50%;
+        max-width: 30rem; }
+      .contact .description {
+        padding: 1rem 0 1rem 2rem;
+        border-left: 0.25rem solid #363636; }
+        .contact .description p {
+          margin-bottom: 0;
+          max-width: 15em; }
+      .contact #mc_embed_signup {
+        padding: 0 2rem 0 0; } }
 
 ul,
 ol {
@@ -401,6 +423,9 @@ h4 {
   .contact input {
     font-size: 1.25em;
     text-align: right; }
+  @media only screen and (min-width: 1000px) {
+    .contact .description {
+      text-align: left; } }
 
 .wrapper {
   box-sizing: border-box;

@@ -19,6 +19,22 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-93964657-1', 'auto');
+    ga('send', 'pageview');
+    </script>
 </head>
 
 <body>
@@ -36,11 +52,11 @@
             </g>
         </svg>
     </header>
-    <div id="notice">
-      <h4>Coming Summer ‘17</h4>
-    </div>
     <section class="hero">
         <h1>Buy Cool S&#35;&iexcl;&plus;!</h1>
+        <div id="notice">
+            <h4>Coming Summer ‘17</h4>
+        </div>
         <ul class="social">
             <li>
                 <a href="#"><img src="img/social/facebook-black.svg" alt=""></a>
@@ -61,8 +77,10 @@
         <p>It is the physical embodiment of its founders’ collaborative spirit. Taking cues from modernism, nature, and contemporary art, this curated collection seeks to introduce the city to the work of the artists that live here.</p>
     </section>
     <section class="contact">
-        <h3>Can we have your number?</h3>
-        <p>Enter your deets (sp?) below and we’ll let you know what we’re up to.</p>
+        <div class="description">
+            <h3>Can we have your number?</h3>
+            <p>Enter your deets and we’ll let you know what we’re up to.</p>
+        </div>
         <!-- Begin MailChimp Signup Form -->
         <div id="mc_embed_signup">
             <form action="//ooo.us15.list-manage.com/subscribe/post?u=1749eec418c822c463444c0fd&amp;id=9f957991f6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
