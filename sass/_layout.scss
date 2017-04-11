@@ -30,6 +30,8 @@ body {
     @include mq( 'beta') {
         position: absolute;
         top: 50vh;
+        bottom: initial;
+left: 0;
     }
 }
 
@@ -74,6 +76,9 @@ body {
             transform: initial;
             position: absolute;
             top: calc(70vh - #{$social-icon-beta} / 2);
+            left: 50%;
+-webkit-transform: translateX(-50%);
+transform: translateX(-50%);
         }
     }
 }
